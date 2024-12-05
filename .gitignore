@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Windows ###
+/src/main/java/Ejercicios_Clase/Dredux.java
