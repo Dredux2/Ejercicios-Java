@@ -2,6 +2,10 @@ package proyecto_mundial_2023;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
+    /**
+     * Prueba que verifica que el metodo devuelve el código correcto
+     * cuando el último dígito del número de ticket es par.
+     */
     @Test
     void codigoVerificacion_ReturnsCorrectCodeForEvenLastDigit() {
         int numeroTicket = 2468;
@@ -10,6 +14,10 @@ class MainTest {
         assertEquals(expectedCodigo, actualCodigo);
     }
 
+    /**
+     * Prueba que verifica que el metodo devuelve el código correcto
+     * cuando el último dígito del número de ticket es impar.
+     */
     @Test
     void codigoVerificacion_ReturnsCorrectCodeForOddLastDigit() {
         int numeroTicket = 1357;
@@ -18,6 +26,10 @@ class MainTest {
         assertEquals(expectedCodigo, actualCodigo);
     }
 
+    /**
+     * Prueba que verifica que el metodo devuelve cero
+     * cuando el número de ticket es cero.
+     */
     @Test
     void codigoVerificacion_ReturnsZeroForZeroTicket() {
         int numeroTicket = 0;
@@ -26,6 +38,10 @@ class MainTest {
         assertEquals(expectedCodigo, actualCodigo);
     }
 
+    /**
+     * Prueba que verifica que el metodo devuelve el código correcto
+     * cuando el número de ticket es un solo dígito.
+     */
     @Test
     void codigoVerificacion_ReturnsCorrectCodeForSingleDigitTicket() {
         int numeroTicket = 5;
@@ -34,6 +50,10 @@ class MainTest {
         assertEquals(expectedCodigo, actualCodigo);
     }
 
+    /**
+     * Prueba que verifica que el metodo devuelve el código correcto
+     * cuando el número de ticket es un número grande.
+     */
     @Test
     void codigoVerificacion_ReturnsCorrectCodeForLargeNumber() {
         int numeroTicket = 987654321;
