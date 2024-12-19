@@ -3,20 +3,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Verificacion_Entradas {
     /**
-     * Metodo de prueba para verificar el cálculo del código de verificación.
-     */
-    public static void pruebaCodigoVerificacion() {
-        int resultado1 = codigoVerificacion(12345);
-        System.out.println("Resultado esperado: " + resultado1);
-
-        int resultado2 = codigoVerificacion(67890);
-        System.out.println("Resultado esperado: " + resultado2);
-
-        int resultado3 = codigoVerificacion(11111);
-        System.out.println("Resultado esperado: " + resultado3);
-    }
-
-    /**
      * Metodo principal que lee el número de casos y los números de ticket,
      * calcula el código de verificación para cada ticket y lo imprime.
      */
@@ -31,7 +17,6 @@ public class Verificacion_Entradas {
                 int codigo = codigoVerificacion(numeroTicket);
                 System.out.println(codigo);
             }
-            pruebaCodigoVerificacion();
         } catch (InputMismatchException e) {
             System.out.println("Error: Debe ingresar un número entero.");
         }
