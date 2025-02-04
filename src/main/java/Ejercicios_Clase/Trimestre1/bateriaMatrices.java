@@ -1,4 +1,4 @@
-package Ejercicios_Clase;
+package Ejercicios_Clase.Trimestre1;
 import java.util.Random;
 import java.util.Scanner;
 public class bateriaMatrices {

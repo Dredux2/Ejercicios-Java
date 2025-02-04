@@ -1,4 +1,4 @@
-package Ejercicios_Clase;
+package Ejercicios_Clase.Trimestre1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Ej8sopaLetras {

@@ -1,4 +1,4 @@
-package Ejercicios_Clase;
+package Ejercicios_Clase.Trimestre1;
 import java.util.Scanner;
 public class Ej3numSuerte {
     public static void main(String[] args){
