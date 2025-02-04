@@ -1,9 +1,5 @@
 package Ejercicios_Clase.Trimestre2.TV;
 import java.time.LocalDate;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 public class Invitado {
     private String nombre;
     private String profesion;
