@@ -1,4 +1,4 @@
-package Ejercicios_Clase;
+package Ejercicios_Clase.Trimestre1;
 import java.time.Year;
 import java.util.InputMismatchException;
 import java.util.Random;

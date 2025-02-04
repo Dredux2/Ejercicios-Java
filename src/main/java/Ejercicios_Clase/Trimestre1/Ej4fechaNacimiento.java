@@ -1,4 +1,4 @@
-package Ejercicios_Clase;
+package Ejercicios_Clase.Trimestre1;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 public class Ej4fechaNacimiento {

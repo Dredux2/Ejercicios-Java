@@ -1,4 +1,4 @@
-package Ejercicios_Clase;// Clases importadas de Java
+package Ejercicios_Clase.Trimestre1;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 // Clase y metodo Practica-4
