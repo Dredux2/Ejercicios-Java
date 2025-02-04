@@ -79,6 +79,7 @@ class Prestamo {
     + String toString()
 }
 
+
 Editorial --> Libro
 Estudiante --> Libro
 Libro --> Estudiante
