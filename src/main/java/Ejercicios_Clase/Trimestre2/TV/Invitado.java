@@ -1,20 +1,16 @@
 package Ejercicios_Clase.Trimestre2.TV;
 import java.time.LocalDate;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 public class Invitado {
     private String nombre;
     private String profesion;
     private LocalDate fechaVisita;
-    private int duracionVisita;
+    private int temporada;
 
-    public Invitado(String nombre, String profesion, LocalDate fechaVisita, int duracionVisita) {
+    public Invitado(String nombre, String profesion, LocalDate fechaVisita, int temporada){
         this.nombre = nombre;
         this.profesion = profesion;
         this.fechaVisita = fechaVisita;
-        this.duracionVisita = duracionVisita;
+        this.temporada = temporada;
     }
 
     // region Getters y Setters
@@ -42,12 +38,12 @@ public class Invitado {
         this.fechaVisita = fechaVisita;
     }
 
-    public int getDuracionVisita() {
-        return duracionVisita;
+    public int getTemporada() {
+        return temporada;
     }
 
-    public void setDuracionVisita(int duracionVisita) {
-        this.duracionVisita = duracionVisita;
+    public void setTemporada(int temporada) {
+        this.temporada = temporada;
     }
     // endregion
 
@@ -57,7 +53,7 @@ public class Invitado {
                 "nombre='" + nombre + '\'' +
                 ", profesion='" + profesion + '\'' +
                 ", fechaVisita=" + fechaVisita +
-                ", duracionVisita=" + duracionVisita +
+                ", Temporada=" + temporada +
                 '}';
     }
 }

@@ -14,11 +14,8 @@ public class Programa {
         this.cadena = cadena;
         cadena.agregarPrograma(this);
         this.temporadas = temporadas;
-<<<<<<< HEAD
         this.director = new Empleado("Juan Alberto", "director", null);
-=======
         this.director = new Empleado("Juan", "director", null);
->>>>>>> origin/master
         listaEmpleados.add(director);
     }
 
@@ -58,7 +55,6 @@ public class Programa {
     }
     // endregion
 
-<<<<<<< HEAD
     public void agregarDirector(String nombre) {
         director.setNombre(nombre);
     }
@@ -68,8 +64,6 @@ public class Programa {
         director = null;
     }
 
-=======
->>>>>>> origin/master
     public void agregarEmpleado(String nombre, String cargo) {
         Empleado nuevoEmpleado = new Empleado(nombre, cargo, this.director);
         listaEmpleados.add(nuevoEmpleado);
@@ -79,8 +73,8 @@ public class Programa {
         listaEmpleados.remove(empleado);
     }
 
-    public void agregarInvitado(String nombre, String profesion, LocalDate fechaVisita, int duracionVisita) {
-        Invitado nuevoInvitado = new Invitado(nombre, profesion, fechaVisita, duracionVisita);
+    public void agregarInvitado(String nombre, String profesion, LocalDate fechaVisita, int temporada) {
+        Invitado nuevoInvitado = new Invitado(nombre, profesion, fechaVisita, temporada);
         listaInvitados.add(nuevoInvitado);
     }
 
@@ -93,10 +87,10 @@ public class Programa {
         return "Programa{" +
                 "nombre='" + nombre + '\'' +
                 ", cadena=" + cadena.getNombre() +
+                ", director=" + director.getNombre() +
                 ", temporadas=" + temporadas +
                 ", listaEmpleados=" + listaEmpleados +
                 ", listaInvitados=" + listaInvitados +
-                ", director=" + director.getNombre() +
                 '}';
     }
 }
