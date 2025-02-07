@@ -1,15 +1,16 @@
 package Ejercicios_Clase.Trimestre2.TV;
 import java.time.LocalDate;
+import java.util.Scanner;
 public class Invitado {
     private String nombre;
     private String profesion;
     private LocalDate fechaVisita;
     private int temporada;
 
-    public Invitado(String nombre, String profesion, LocalDate fechaVisita, int temporada){
+    public Invitado(String nombre, String profesion, int temporada){
         this.nombre = nombre;
         this.profesion = profesion;
-        this.fechaVisita = fechaVisita;
+        this.fechaVisita = preguntarFechaVisita();
         this.temporada = temporada;
     }
 
@@ -46,6 +47,24 @@ public class Invitado {
         this.temporada = temporada;
     }
     // endregion
+
+
+    private LocalDate preguntarFechaVisita() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Invitado: " + nombre + "\nIntroduce el año de la visita:");
+        int year = scanner.nextInt();
+        System.out.print("Introduce el mes de la visita:");
+        int month = scanner.nextInt();
+        System.out.print("Introduce el día de la visita:");
+        int day = scanner.nextInt();
+        return LocalDate.of(year, month, day);
+    }
+
+    public void invitadosTemporada(int temporada) {
+        if (this.temporada == temporada) {
+            System.out.println("Invitado: " + nombre + ", Profesión: " + profesion);
+        }
+    }
 
     @Override
     public String toString() {

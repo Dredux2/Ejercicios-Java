@@ -73,8 +73,8 @@ public class Programa {
         listaEmpleados.remove(empleado);
     }
 
-    public void agregarInvitado(String nombre, String profesion, LocalDate fechaVisita, int temporada) {
-        Invitado nuevoInvitado = new Invitado(nombre, profesion, fechaVisita, temporada);
+    public void agregarInvitado(String nombre, String profesion, int temporada) {
+        Invitado nuevoInvitado = new Invitado(nombre, profesion, temporada);
         listaInvitados.add(nuevoInvitado);
     }
 
