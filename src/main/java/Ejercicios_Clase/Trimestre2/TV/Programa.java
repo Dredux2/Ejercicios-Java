@@ -1,5 +1,4 @@
 package Ejercicios_Clase.Trimestre2.TV;
-import java.time.LocalDate;
 import java.util.ArrayList;
 public class Programa {
     private String nombre;
