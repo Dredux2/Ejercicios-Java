@@ -2,22 +2,17 @@ package Ejercicios_Clase.Trimestre2.Festival;
 public class Concierto {
     public static void main(String[] args) {
 
-        Asistente a1 = new Asistente("Carlos", 25, "VIP");
-        Artista art1 = new Artista("Dua Lipa", 28, "Pop");
-        Organizador or1 = new Organizador("Juan Alverto", 33, "Seguridad");
+        Persona artista = new Artista("Sofía", 25, "Rock Alternativo");
+        Persona asistente = new Asistente("Lucas", 18, "VIP");
+        Persona organizador = new Organizador("Martín", 30, "Producción");
 
-        System.out.println("Información del asistente:");
-        a1.mostrarInfo();
+        //usamos el metodo con polimorfismo
+        mostrarAcceso(artista);      //Accediendo como Artista: Preparando el show.
+        mostrarAcceso(asistente);    //Accediendo como Asistente: Buscando su asiento.
+        mostrarAcceso(organizador);  //Accediendo como Organizador: Coordinando el evento.
+    }
 
-        System.out.println();
-
-        System.out.println("Información del artista:");
-        art1.mostrarInfo();
-
-        System.out.println();
-
-        System.out.println("Información del Organizador:");
-        or1.mostrarInfo();
-
+    public static void mostrarAcceso(Persona persona) {
+        Persona.accederEvento();
     }
 }
