@@ -13,4 +13,8 @@ class Artista extends Persona {
         super.mostrarInfo();
         System.out.println("Género Musical: " + generoMusical);
     }
+
+    public static void accederEvento() {
+        System.out.println("Accediendo al evento como artista: Preparando el show");
+    }
 }

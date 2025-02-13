@@ -12,4 +12,8 @@ class Asistente extends Persona {
         super.mostrarInfo(); //llamamos al metodo de la clase Persona
         System.out.println("Tipo de entrada: " + entrada);
     }
+
+    public static void accederEvento() {
+        System.out.println("Accediendo al evento como asistente: Buscando asiento");
+    }
 }

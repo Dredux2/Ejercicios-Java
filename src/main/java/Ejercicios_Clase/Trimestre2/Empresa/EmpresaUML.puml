@@ -1,0 +1,28 @@
+@startuml
+package Ejercicios_Clase.Trimestre2.Empresa {
+    class Empleado {
+        + void realizarTarea()
+    }
+
+    class Desarrollador {
+        + void realizarTarea()
+    }
+
+    class Diseñador {
+        + void realizarTarea()
+    }
+
+    class Gerente {
+        + void realizarTarea()
+    }
+
+    class AppEmpresa {
+        + static void main(String[] args)
+        + static void asignarTarea(Empleado empleado)
+    }
+
+    Empleado <|-- Desarrollador
+    Empleado <|-- Diseñador
+    Empleado <|-- Gerente
+}
+@enduml

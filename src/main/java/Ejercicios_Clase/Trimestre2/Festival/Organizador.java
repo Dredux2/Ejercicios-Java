@@ -10,4 +10,8 @@ public class Organizador extends Persona {
         super.mostrarInfo();
         System.out.println("Tipo de rol: " + rol);
     }
+
+    public static void accederEvento(){
+        System.out.println("Accediendo al evento como organizador: Coordinando el evento");
+    }
 }
