@@ -1,4 +1,5 @@
 package Ejercicios_Clase.Trimestre2.Twitch;
+<<<<<<< HEAD
 public class PlanPremium extends Suscripcion{
     public PlanPremium(String nombrePlan, double precio){
         super(nombrePlan, precio);
@@ -13,4 +14,7 @@ public class PlanPremium extends Suscripcion{
     public void obtenerPrueba() {
         System.out.println("7 dias de prueba para cuentas nuevas.");
     }
+=======
+public class PlanPremium {
+>>>>>>> origin/master
 }

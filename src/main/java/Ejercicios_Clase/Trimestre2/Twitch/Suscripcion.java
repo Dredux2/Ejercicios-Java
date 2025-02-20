@@ -1,4 +1,5 @@
 package Ejercicios_Clase.Trimestre2.Twitch;
+<<<<<<< HEAD
 abstract class Suscripcion {
     private String nombrePlan;
     private double precio;
@@ -15,4 +16,7 @@ abstract class Suscripcion {
 
     public abstract void obtenerBeneficios();
     public abstract void obtenerPrueba();
+=======
+public class Suscripcion {
+>>>>>>> origin/master
 }
