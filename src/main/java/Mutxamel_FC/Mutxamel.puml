@@ -1,0 +1,82 @@
+@startuml Mutxamel_FC
+
+interface I_FuncionesIntegrantes {
+  +concentrarse(): void
+  +viajar(ciudad: String): void
+  +celebrarGol(): void
+}
+
+interface I_AccionesDeportivas {
+  +entrenar(): void
+  +jugarPartido(rival: String): void
+}
+
+abstract class A_Mutxamel {
+  -nombre: String
+  -edad: int
+  +A_Mutxamel(nombre: String, edad: int)
+}
+
+enum E_Equipos {
+  BENJAMIN
+  ALEVIN
+  INFANTIL
+  CADETE
+  JUVENIL
+  SENIOR
+}
+
+enum E_Posiciones {
+  PORTERO
+  DEFENSA
+  CENTROCAMPISTA
+  DELANTERO
+}
+
+class C_Jugador {
+  -categoria: E_Equipos
+  -posicion: E_Posiciones
+  -acompañante: C_Acompañante
+  -dorsal: int
+  +calentar(): void
+  +descansar(): void
+  +marcarGol(): void
+}
+
+class C_Entrenador {
+  -equipo: E_Equipos
+  -formacionPreferida: String
+  +planificarEntrenamiento(): void
+  +hacerCambios(): void
+}
+
+class C_Acompañante {
+  -integrante: C_Jugador
+  -parentesco: String
+  +animarEquipo(): void
+}
+
+class C_Masajista {
+  -titulacion: String
+  -yearExperiencia: int
+  +darMasaje(jugador: C_Jugador): void
+}
+
+' Herencias
+A_Mutxamel ..|> I_FuncionesIntegrantes
+C_Jugador --|> A_Mutxamel
+C_Entrenador --|> A_Mutxamel
+C_Acompañante --|> A_Mutxamel
+C_Masajista --|> A_Mutxamel
+
+' Implementaciones
+C_Jugador ..|> I_AccionesDeportivas
+C_Entrenador ..|> I_AccionesDeportivas
+
+' Asociaciones
+C_Jugador --> E_Equipos : categoria
+C_Jugador --> E_Posiciones : posicion
+C_Entrenador --> E_Equipos : equipo
+C_Jugador "1" <--> "0..1" C_Acompañante : acompañante / integrante
+
+@enduml
