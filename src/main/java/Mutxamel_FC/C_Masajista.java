@@ -2,32 +2,32 @@ package Mutxamel_FC;
 import lombok.Getter;
 import lombok.Setter;
 @Getter @Setter
-public class C_Masajista extends A_Mutxamel{
+public class C_Masajista extends A_MutxamelFC {
     private String titulacion;
-    private int yearExperiencia;
+    private int agesExperiencia;
 
-    public C_Masajista(String nombre, int edad, String titulacion, int yearExperiencia) {
-        super(nombre, edad);
-        this.titulacion = titulacion;
-        this.yearExperiencia = yearExperiencia;
+    public C_Masajista(String nombre, int edad, String titulacion, int agesExperiencia) {
+            super(nombre, edad);
+            this.titulacion = titulacion;
+            this.agesExperiencia = agesExperiencia;
     }
 
-    public void darMasaje(C_Jugador jugador) {
-        System.out.println("Dando masaje");
+    public void darMasaje() {
+        System.out.println("El masajista " + getNombre() + " esta dando un masaje...");
     }
 
     @Override
     public void concentrarse() {
-
+        System.out.println("El masajista " + getNombre() + " se esta concentrando en el partido...");
     }
 
     @Override
     public void viajar(String ciudad) {
-
+        System.out.println("El masajista " + getNombre() + " esta viajando a " + ciudad);
     }
 
     @Override
-    public void celebrarGol() {
-
+    public void celebrerGol() {
+        System.out.println("GOOOOOOOOOOOOOOL");
     }
 }
