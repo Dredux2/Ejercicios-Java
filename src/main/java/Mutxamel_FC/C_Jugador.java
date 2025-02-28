@@ -1,53 +1,69 @@
 package Mutxamel_FC;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.HashSet;
+import java.util.Set;
 @Getter @Setter
-public class C_Jugador extends A_MutxamelFC implements I_AccionesDeportivas{
+public class C_Jugador extends A_MutxamelFC implements I_AccionesDeportivas {
+    private static Set<Integer> dorsalesAsignados = new HashSet<>();
     private E_Equipos categoria;
     private E_Posiciones posicion;
     private int dorsal;
 
-    public C_Jugador(String nombre, int edad, E_Equipos categoria, int dorsal, E_Posiciones posicion) {
+    public C_Jugador(String nombre, int edad, E_Equipos categoria, E_Posiciones posicion, int dorsal) throws X_dorsalAsignado {
         super(nombre, edad);
+        if (dorsalesAsignados.contains(dorsal)) {
+            throw new X_dorsalAsignado("El dorsal " + dorsal + " ya está asignado a otro jugador.");
+        }
         this.categoria = categoria;
-        this.dorsal = dorsal;
         this.posicion = posicion;
+        this.dorsal = dorsal;
+        dorsalesAsignados.add(dorsal);
+    }
+
+    public void setDorsal(int dorsal) throws X_dorsalAsignado {
+        if (dorsalesAsignados.contains(dorsal)) {
+            throw new X_dorsalAsignado("El dorsal " + dorsal + " ya está asignado a otro jugador.");
+        }
+        dorsalesAsignados.remove(this.dorsal);
+        this.dorsal = dorsal;
+        dorsalesAsignados.add(dorsal);
     }
 
     public void calentar() {
-        System.out.println("El jugador " + getNombre() + " con el dorsal nº " + getDorsal() + " esta calentando para entrar al campo...");
+        System.out.println(getNombre() + " esta calentando en este momento...");
     }
 
     public void descansar() {
-        System.out.println("El jugador " + getNombre() + " esta descansando...");
+        System.out.println(getNombre() + " esta descansando...");
     }
 
     public void marcarGol() {
-        System.out.println("¡El jugador " + getNombre() + " ha marcado un gol!");
-    }
-
-    @Override
-    public void concentrarse() {
-        System.out.println("El jugador " + getNombre() + " se esta concentrando...");
-    }
-
-    @Override
-    public void viajar(String ciudad) {
-        System.out.println("El jugador " + getNombre() + " esta viajando a " + ciudad);
-    }
-
-    @Override
-    public void celebrerGol() {
-        System.out.println("El jugador " + getNombre() + " esta celebrando el gol...");
+        System.out.println("!" + getNombre() + " ha marcado un gol!!");
     }
 
     @Override
     public void entrenar() {
-        System.out.println("El jugador " + getNombre() + " esta entrenando...");
+        System.out.println("Jugador/a: " + getNombre() + " esta entrenando...");
     }
 
     @Override
     public void jugarPartido(String rival) {
-        System.out.println("El jugador " + getNombre() + " juega un partido contra el/la " + rival);
+        System.out.println("Jugador/a: " + getNombre() + " esta jugando un partido contra " + rival);
+    }
+
+    @Override
+    public void concentrarse() {
+        System.out.println("Jugador/a: " + getNombre() + " se esta concentrando en el partido...");
+    }
+
+    @Override
+    public void viajar(String ciudad) {
+        System.out.println("Jugador/a: " + getNombre() + " esta viajando a " + ciudad);
+    }
+
+    @Override
+    public void celebrarGol() {
+        System.out.println("Jugador/a " + getNombre() + ": GOOOOOOOOOOOOOOL");
     }
 }

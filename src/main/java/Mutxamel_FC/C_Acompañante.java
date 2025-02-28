@@ -1,8 +1,8 @@
 package Mutxamel_FC;
-import lombok.Getter;
 import lombok.Setter;
+import lombok.Getter;
 @Getter @Setter
-public class C_Acompañante extends A_MutxamelFC {
+public class C_Acompañante extends A_MutxamelFC{
     private C_Jugador integrante;
     private String parentesco;
 
@@ -13,21 +13,21 @@ public class C_Acompañante extends A_MutxamelFC {
     }
 
     public void animarEquipo(){
-        System.out.println(this.getNombre() + " está animando al equipo...");
+        System.out.println(getNombre() + " está animando a " + integrante.getNombre());
     }
 
     @Override
     public void concentrarse() {
-        System.out.println(this.getNombre() + " se está concentrando en el partido...");
+        System.out.println("Acompañante: " + getNombre() + " se esta concentrando en el partido...");
     }
 
     @Override
     public void viajar(String ciudad) {
-        System.out.println("Viajando a " + ciudad + "...");
+        System.out.println("Acompañante: " + getNombre() + " está viajando a " + ciudad);
     }
 
     @Override
-    public void celebrerGol() {
-        System.out.println("¡GOOOOOOOOOOOOOOL!");
+    public void celebrarGol() {
+        System.out.println("Acompañante " + getNombre() + ": GOOOOOOOOOOOOOOL");
     }
 }

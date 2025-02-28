@@ -1,6 +1,6 @@
 package Mutxamel_FC;
-public interface I_FuncionesIntegrales {
+public interface I_FuncionesIntegrantes {
     void concentrarse();
     void viajar(String ciudad);
-    void celebrerGol();
+    void celebrarGol();
 }
