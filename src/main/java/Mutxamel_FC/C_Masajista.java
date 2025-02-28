@@ -6,10 +6,11 @@ import lombok.Setter;
  * Extiende de la clase abstracta A_MutxamelFC.
  */
 @Getter @Setter
-public class C_Masajista extends A_MutxamelFC {
+public class C_Masajista extends A_MutxamelFC{
     private String titulacion;
     private int añosExperiencia;
 
+<<<<<<< HEAD
     /**
      * Constructor de la clase C_Masajista.
      *
@@ -18,13 +19,19 @@ public class C_Masajista extends A_MutxamelFC {
      * @param titulacion La titulación del masajista.
      * @param añosExperiencia Los años de experiencia del masajista.
      */
+=======
+>>>>>>> origin/master
     public C_Masajista(String nombre, int edad, String titulacion, int añosExperiencia) {
         super(nombre, edad);
         this.titulacion = titulacion;
         this.añosExperiencia = añosExperiencia;
     }
 
+<<<<<<< HEAD
     public void darMasaje(C_Jugador jugador) {
+=======
+    public void darMasaje(C_Jugador jugador){
+>>>>>>> origin/master
         System.out.println(getNombre() + " está dando un masaje a " + jugador.getNombre());
     }
 

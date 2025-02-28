@@ -3,10 +3,13 @@ import lombok.Getter;
 import lombok.Setter;
 import java.util.HashSet;
 import java.util.Set;
+<<<<<<< HEAD
 /**
  * La clase C_Jugador representa a un jugador del equipo Mutxamel FC.
  * Extiende de la clase abstracta A_MutxamelFC e implementa la interfaz I_AccionesDeportivas.
  */
+=======
+>>>>>>> origin/master
 @Getter @Setter
 public class C_Jugador extends A_MutxamelFC implements I_AccionesDeportivas {
     private static Set<Integer> dorsalesAsignados = new HashSet<>();
@@ -14,6 +17,7 @@ public class C_Jugador extends A_MutxamelFC implements I_AccionesDeportivas {
     private E_Posiciones posicion;
     private int dorsal;
 
+<<<<<<< HEAD
     /**
      * Constructor de la clase C_Jugador.
      *
@@ -24,6 +28,8 @@ public class C_Jugador extends A_MutxamelFC implements I_AccionesDeportivas {
      * @param dorsal El número dorsal del jugador.
      * @throws X_dorsalAsignado Si el dorsal ya está asignado a otro jugador.
      */
+=======
+>>>>>>> origin/master
     public C_Jugador(String nombre, int edad, E_Equipos categoria, E_Posiciones posicion, int dorsal) throws X_dorsalAsignado {
         super(nombre, edad);
         if (dorsalesAsignados.contains(dorsal)) {
@@ -35,12 +41,15 @@ public class C_Jugador extends A_MutxamelFC implements I_AccionesDeportivas {
         dorsalesAsignados.add(dorsal);
     }
 
+<<<<<<< HEAD
     /**
      * Establece el dorsal del jugador.
      *
      * @param dorsal El nuevo número dorsal del jugador.
      * @throws X_dorsalAsignado Si el dorsal ya está asignado a otro jugador.
      */
+=======
+>>>>>>> origin/master
     public void setDorsal(int dorsal) throws X_dorsalAsignado {
         if (dorsalesAsignados.contains(dorsal)) {
             throw new X_dorsalAsignado("El dorsal " + dorsal + " ya está asignado a otro jugador.");
