@@ -1,6 +1,9 @@
 package Mutxamel_FC;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * Clase que simula la aplicación de Mutxamel.
+ */
 public class A_AppMutxamel {
     public static void main(String[] args) {
         List<C_Jugador> jugadores = new ArrayList<>();
