@@ -5,7 +5,7 @@ import java.util.List;
  * Clase que simula la aplicación de Mutxamel.
  */
 public class A_AppMutxamel {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws X_dorsalAsignado {
         List<C_Jugador> jugadores = new ArrayList<>();
         List<C_Entrenador> entrenadores = new ArrayList<>();
         List<C_Masajista> masajistas = new ArrayList<>();
@@ -102,12 +102,12 @@ public class A_AppMutxamel {
     }
 
     public static void entrenarEquipo(List<C_Entrenador> entrenadores, List<C_Jugador> jugadores) {
-        for (C_Entrenador entrenadore : entrenadores) {
-            entrenadore.entrenar();
+        for (C_Entrenador entrenador : entrenadores) {
+            entrenador.entrenar();
         }
 
-        for (C_Jugador jugadore : jugadores) {
-            jugadore.entrenar();
+        for (C_Jugador jugador : jugadores) {
+            jugador.entrenar();
         }
     }
 

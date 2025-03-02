@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Permite gestionar los jugadores, entrenadores y masajistas del equipo.
  */
 public class A_AppMantenimiento {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws X_dorsalAsignado {
         Scanner sc = new Scanner(System.in);
         List<C_Jugador> jugadores = new ArrayList<>();
         List<C_Entrenador> entrenadores = new ArrayList<>();
@@ -48,7 +48,7 @@ public class A_AppMantenimiento {
      * @param sc El objeto Scanner para leer la entrada del usuario.
      * @param jugadores La lista de jugadores del equipo.
      */
-    private static void gestionarJugadores(Scanner sc, List<C_Jugador> jugadores) {
+    private static void gestionarJugadores(Scanner sc, List<C_Jugador> jugadores) throws X_dorsalAsignado {
         int opcion;
         do {
             System.out.println("\n--- Mantenimiento de Jugadores ---");
@@ -79,7 +79,7 @@ public class A_AppMantenimiento {
      * @param sc El objeto Scanner para leer la entrada del usuario.
      * @param jugadores La lista de jugadores del equipo.
      */
-    private static void nuevoJugador(Scanner sc, List<C_Jugador> jugadores) {
+    private static void nuevoJugador(Scanner sc, List<C_Jugador> jugadores) throws X_dorsalAsignado {
         System.out.println("\n--- Añadir nuevo jugador ---");
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();

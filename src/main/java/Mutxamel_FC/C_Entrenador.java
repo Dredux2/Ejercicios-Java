@@ -24,7 +24,7 @@ public class C_Entrenador extends A_MutxamelFC implements I_AccionesDeportivas {
     }
 
     /**
-     * Constructor de la clase C_Entrenador con formación preferida.
+     * Constructor sobrecargado de la clase C_Entrenador con formación preferida.
      *
      * @param nombre El nombre del entrenador.
      * @param edad La edad del entrenador.

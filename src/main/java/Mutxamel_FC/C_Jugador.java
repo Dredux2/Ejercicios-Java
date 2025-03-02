@@ -9,7 +9,7 @@ import java.util.Set;
  */
 @Getter @Setter
 public class C_Jugador extends A_MutxamelFC implements I_AccionesDeportivas {
-    private static Set<Integer> dorsalesAsignados = new HashSet<>();
+    private static Set<Integer> dorsalesAsignados = new HashSet<>(); // Uso de Github Copilot para la creación de esta variable.
     private E_Equipos categoria;
     private E_Posiciones posicion;
     private int dorsal;
@@ -26,26 +26,22 @@ public class C_Jugador extends A_MutxamelFC implements I_AccionesDeportivas {
      */
     public C_Jugador(String nombre, int edad, E_Equipos categoria, E_Posiciones posicion, int dorsal) throws X_dorsalAsignado {
         super(nombre, edad);
-        if (dorsalesAsignados.contains(dorsal)) {
-            throw new X_dorsalAsignado("El dorsal " + dorsal + " ya está asignado a otro jugador.");
-        }
         this.categoria = categoria;
         this.posicion = posicion;
-        this.dorsal = dorsal;
-        dorsalesAsignados.add(dorsal);
+        setDorsal(dorsal);
     }
 
-    /*
+    /**
      * Establece el dorsal del jugador.
      *
      * @param dorsal El nuevo número dorsal del jugador.
      * @throws X_dorsalAsignado Si el dorsal ya está asignado a otro jugador.
      */
-    public void setDorsal(int dorsal) throws X_dorsalAsignado {
+    public void setDorsal(int dorsal) throws X_dorsalAsignado { // Uso de Github Copilot para la creación de este metodo.
         if (dorsalesAsignados.contains(dorsal)) {
             throw new X_dorsalAsignado("El dorsal " + dorsal + " ya está asignado a otro jugador.");
         }
-        dorsalesAsignados.remove(this.dorsal);
+        // Si el dorsal no está asignado, se asigna al jugador y se añade a la lista de dorsales asignados.
         this.dorsal = dorsal;
         dorsalesAsignados.add(dorsal);
     }
