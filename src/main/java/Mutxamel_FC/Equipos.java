@@ -1,4 +1,4 @@
 package Mutxamel_FC;
-public enum E_Equipos {
+public enum Equipos {
     BENJAMIN, ALEVIN, INFANTIL, CADETE, JUVENIL, SENIOR
 }

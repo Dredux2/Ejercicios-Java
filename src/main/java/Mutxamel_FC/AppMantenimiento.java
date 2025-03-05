@@ -7,12 +7,12 @@ import java.util.Scanner;
  * La clase A_AppMantenimiento es la clase principal de la aplicación de mantenimiento del Mutxamel FC.
  * Permite gestionar los jugadores, entrenadores y masajistas del equipo.
  */
-public class A_AppMantenimiento {
-    public static void main(String[] args) throws X_dorsalAsignado {
+public class AppMantenimiento {
+    public static void main(String[] args) throws dorsalAsignado {
         Scanner sc = new Scanner(System.in);
-        List<C_Jugador> jugadores = new ArrayList<>();
-        List<C_Entrenador> entrenadores = new ArrayList<>();
-        List<C_Masajista> masajistas = new ArrayList<>();
+        List<Jugador> jugadores = new ArrayList<>();
+        List<Entrenador> entrenadores = new ArrayList<>();
+        List<Masajista> masajistas = new ArrayList<>();
         int opcion;
         do {
             System.out.println("\n--- App de mantenimiento del MUTXAMEL FC ---");
@@ -48,7 +48,7 @@ public class A_AppMantenimiento {
      * @param sc El objeto Scanner para leer la entrada del usuario.
      * @param jugadores La lista de jugadores del equipo.
      */
-    private static void gestionarJugadores(Scanner sc, List<C_Jugador> jugadores) throws X_dorsalAsignado {
+    private static void gestionarJugadores(Scanner sc, List<Jugador> jugadores) throws dorsalAsignado {
         int opcion;
         do {
             System.out.println("\n--- Mantenimiento de Jugadores ---");
@@ -79,7 +79,7 @@ public class A_AppMantenimiento {
      * @param sc El objeto Scanner para leer la entrada del usuario.
      * @param jugadores La lista de jugadores del equipo.
      */
-    private static void nuevoJugador(Scanner sc, List<C_Jugador> jugadores) throws X_dorsalAsignado {
+    private static void nuevoJugador(Scanner sc, List<Jugador> jugadores) throws dorsalAsignado {
         System.out.println("\n--- Añadir nuevo jugador ---");
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();
@@ -94,18 +94,18 @@ public class A_AppMantenimiento {
         }
 
         System.out.print("Equipo: ");
-        E_Equipos equipo;
+        Equipos equipo;
         try {
-            equipo = E_Equipos.valueOf(sc.nextLine());
+            equipo = Equipos.valueOf(sc.nextLine());
         } catch (IllegalArgumentException error) {
             System.out.println("Error: " + error.getMessage());
             return;
         }
 
         System.out.print("Posición: ");
-        E_Posiciones posicion;
+        Posiciones posicion;
         try {
-            posicion = E_Posiciones.valueOf(sc.nextLine());
+            posicion = Posiciones.valueOf(sc.nextLine());
         } catch (IllegalArgumentException error) {
             System.out.println("Error: " + error.getMessage());
             return;
@@ -121,7 +121,7 @@ public class A_AppMantenimiento {
         }
         sc.nextLine();
 
-        jugadores.add(new C_Jugador(nombre, edad, equipo, posicion, dorsal));
+        jugadores.add(new Jugador(nombre, edad, equipo, posicion, dorsal));
         System.out.println(nombre + " se ha añadido correctamente.");
     }
 
@@ -131,7 +131,7 @@ public class A_AppMantenimiento {
      * @param sc El objeto Scanner para leer la entrada del usuario.
      * @param jugadores La lista de jugadores del equipo.
      */
-    private static void modificarDatos(Scanner sc, List<C_Jugador> jugadores) {
+    private static void modificarDatos(Scanner sc, List<Jugador> jugadores) {
         if (jugadores.isEmpty()) {
             System.out.println("No hay jugadores en la plantilla.");
         } else {
@@ -178,7 +178,7 @@ public class A_AppMantenimiento {
                     case 3:
                         System.out.print("Nueva categoria: ");
                         try {
-                            jugadores.get(jugador).setCategoria(E_Equipos.valueOf(sc.nextLine()));
+                            jugadores.get(jugador).setCategoria(Equipos.valueOf(sc.nextLine()));
                         } catch (IllegalArgumentException error) {
                             System.out.println("Error: " + error.getMessage());
                         }
@@ -189,14 +189,14 @@ public class A_AppMantenimiento {
                         sc.nextLine();
                         try {
                             jugadores.get(jugador).setDorsal(nuevoDorsal);
-                        } catch (X_dorsalAsignado e) {
+                        } catch (dorsalAsignado e) {
                             System.out.println("Error: " + e.getMessage());
                         }
                         break;
                     case 5:
                         System.out.print("Nueva posición: ");
                         try {
-                            jugadores.get(jugador).setPosicion(E_Posiciones.valueOf(sc.nextLine()));
+                            jugadores.get(jugador).setPosicion(Posiciones.valueOf(sc.nextLine()));
                         } catch (IllegalArgumentException error) {
                             System.out.println("Error: " + error.getMessage());
                         }
@@ -218,7 +218,7 @@ public class A_AppMantenimiento {
      * @param sc El objeto Scanner para leer la entrada del usuario.
      * @param entrenadores La lista de entrenadores del equipo.
      */
-    private static void gestionarEntrenadores(Scanner sc, List<C_Entrenador> entrenadores) {
+    private static void gestionarEntrenadores(Scanner sc, List<Entrenador> entrenadores) {
         int opcion;
         do {
             System.out.println("\n--- Mantenimiento de Entrenadores ---");
@@ -249,7 +249,7 @@ public class A_AppMantenimiento {
      * @param sc El objeto Scanner para leer la entrada del usuario.
      * @param entrenadores La lista de entrenadores del equipo.
      */
-    private static void nuevoEntrenador(Scanner sc, List<C_Entrenador> entrenadores) {
+    private static void nuevoEntrenador(Scanner sc, List<Entrenador> entrenadores) {
         System.out.println("\n--- Añadir nuevo entrenador ---");
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();
@@ -264,9 +264,9 @@ public class A_AppMantenimiento {
         }
 
         System.out.print("Equipo: ");
-        E_Equipos equipo;
+        Equipos equipo;
         try {
-            equipo = E_Equipos.valueOf(sc.nextLine());
+            equipo = Equipos.valueOf(sc.nextLine());
         } catch (IllegalArgumentException error) {
             System.out.println("Error: " + error.getMessage());
             return;
@@ -276,12 +276,12 @@ public class A_AppMantenimiento {
         String formacionPreferida = sc.nextLine();
         try {
             if (formacionPreferida.isEmpty()) {
-                entrenadores.add(new C_Entrenador(nombre, edad, equipo));
+                entrenadores.add(new Entrenador(nombre, edad, equipo));
             } else {
-                entrenadores.add(new C_Entrenador(nombre, edad, equipo, formacionPreferida));
+                entrenadores.add(new Entrenador(nombre, edad, equipo, formacionPreferida));
             }
             System.out.println(nombre + " se ha añadido correctamente.");
-        } catch (X_formacionFormato error) {
+        } catch (formacionFormato error) {
             System.out.println("Error: " + error.getMessage());
         }
     }
@@ -292,7 +292,7 @@ public class A_AppMantenimiento {
      * @param sc El objeto Scanner para leer la entrada del usuario.
      * @param entrenadores La lista de entrenadores del equipo.
      */
-    private static void modificarDatosEntrenador(Scanner sc, List<C_Entrenador> entrenadores) {
+    private static void modificarDatosEntrenador(Scanner sc, List<Entrenador> entrenadores) {
         if (entrenadores.isEmpty()) {
             System.out.println("No hay entrenadores en la plantilla.");
         } else {
@@ -337,7 +337,7 @@ public class A_AppMantenimiento {
                     case 3:
                         System.out.print("Nuevo equipo: ");
                         try {
-                            entrenadores.get(entrenador).setEquipo(E_Equipos.valueOf(sc.nextLine()));
+                            entrenadores.get(entrenador).setEquipo(Equipos.valueOf(sc.nextLine()));
                         } catch (IllegalArgumentException error) {
                             System.out.println("Error: " + error.getMessage());
                         }
@@ -346,7 +346,7 @@ public class A_AppMantenimiento {
                         System.out.print("Nueva formación preferida: ");
                         try {
                             entrenadores.get(entrenador).setFormacionPreferida(sc.nextLine());
-                        } catch (X_formacionFormato e) {
+                        } catch (formacionFormato e) {
                             System.out.println("Error: " + e.getMessage());
                         }
                         break;
@@ -367,7 +367,7 @@ public class A_AppMantenimiento {
      * @param sc El objeto Scanner para leer la entrada del usuario.
      * @param masajistas La lista de masajistas del equipo.
      */
-    private static void gestionarMasajistas(Scanner sc, List<C_Masajista> masajistas) {
+    private static void gestionarMasajistas(Scanner sc, List<Masajista> masajistas) {
         int opcion;
         do {
             System.out.println("\n--- Mantenimiento de Masajistas ---");
@@ -398,7 +398,7 @@ public class A_AppMantenimiento {
      * @param sc El objeto Scanner para leer la entrada del usuario.
      * @param masajistas La lista de masajistas del equipo.
      */
-    private static void nuevoMasajista(Scanner sc, List<C_Masajista> masajistas) {
+    private static void nuevoMasajista(Scanner sc, List<Masajista> masajistas) {
         System.out.println("\n--- Añadir nuevo masajista ---");
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();
@@ -424,7 +424,7 @@ public class A_AppMantenimiento {
             return;
         }
 
-        masajistas.add(new C_Masajista(nombre, edad, titulacion, añosExperiencia));
+        masajistas.add(new Masajista(nombre, edad, titulacion, añosExperiencia));
         System.out.println(nombre + " se ha añadido correctamente.");
     }
 
@@ -434,7 +434,7 @@ public class A_AppMantenimiento {
      * @param sc El objeto Scanner para leer la entrada del usuario.
      * @param masajistas La lista de masajistas del equipo.
      */
-    private static void modificarDatosMasajista(Scanner sc, List<C_Masajista> masajistas) {
+    private static void modificarDatosMasajista(Scanner sc, List<Masajista> masajistas) {
         if (masajistas.isEmpty()) {
             System.out.println("No hay masajistas en la plantilla.");
         } else {
@@ -534,7 +534,7 @@ public class A_AppMantenimiento {
      */
     private static void listarEquipos() {
         System.out.println("\n--- Lista de Equipos ---");
-        for (E_Equipos equipo : E_Equipos.values()) {
+        for (Equipos equipo : Equipos.values()) {
             System.out.println(equipo);
         }
     }
@@ -549,7 +549,7 @@ public class A_AppMantenimiento {
         System.out.println("Introduce el nombre del equipo:");
         String nombreEquipo = sc.nextLine();
         try {
-            E_Equipos equipo = E_Equipos.valueOf(nombreEquipo.toUpperCase());
+            Equipos equipo = Equipos.valueOf(nombreEquipo.toUpperCase());
             System.out.println("Has elegido el equipo: " + equipo);
         } catch (IllegalArgumentException e) {
             System.out.println("Equipo no válido.");

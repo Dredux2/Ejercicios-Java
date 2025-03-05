@@ -2,11 +2,11 @@ package Mutxamel_FC;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * La clase C_Masajista representa a un masajista del equipo Mutxamel FC.
+ * La clase Masajista representa a un masajista del equipo Mutxamel FC.
  * Extiende de la clase abstracta A_MutxamelFC.
  */
 @Getter @Setter
-public class C_Masajista extends A_MutxamelFC{
+public class Masajista extends MutxamelFC {
     private String titulacion;
     private int añosExperiencia;
     /**
@@ -17,13 +17,13 @@ public class C_Masajista extends A_MutxamelFC{
      * @param titulacion La titulación del masajista.
      * @param añosExperiencia Los años de experiencia del masajista.
      */
-    public C_Masajista(String nombre, int edad, String titulacion, int añosExperiencia) {
+    public Masajista(String nombre, int edad, String titulacion, int añosExperiencia) {
         super(nombre, edad);
         this.titulacion = titulacion;
         this.añosExperiencia = añosExperiencia;
     }
 
-    public void darMasaje(C_Jugador jugador){
+    public void darMasaje(Jugador jugador){
         System.out.println(getNombre() + " está dando un masaje a " + jugador.getNombre());
     }
 

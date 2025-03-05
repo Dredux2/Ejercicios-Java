@@ -2,11 +2,11 @@ package eSports_Tournament.data;
 import lombok.Getter;
 import lombok.Setter;
 @Getter @Setter
-public class C_Player extends A_Participant {
+public class Player extends Participant {
     private int level;
     private double ranking;
 
-    public C_Player(String name, int level, double ranking) {
+    public Player(String name, int level, double ranking) {
         super(name);
         this.level = level;
         this.ranking = ranking;

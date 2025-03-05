@@ -2,12 +2,12 @@ package Mutxamel_FC;
 import lombok.Setter;
 import lombok.Getter;
 /*
-  La clase C_Acompañante representa a un acompañante de un jugador en el equipo Mutxamel FC.
+  La clase Acompañante representa a un acompañante de un jugador en el equipo Mutxamel FC.
   Extiende de la clase abstracta A_MutxamelFC.
  */
 @Getter @Setter
-public class C_Acompañante extends A_MutxamelFC{
-    private C_Jugador integrante;
+public class Acompañante extends MutxamelFC {
+    private Jugador integrante;
     private String parentesco;
 
     /**
@@ -18,7 +18,7 @@ public class C_Acompañante extends A_MutxamelFC{
      * @param integrante El jugador al que acompaña.
      * @param parentesco El parentesco con el jugador.
      */
-    public C_Acompañante(String nombre, int edad, C_Jugador integrante, String parentesco) {
+    public Acompañante(String nombre, int edad, Jugador integrante, String parentesco) {
         super(nombre, edad);
         this.integrante = integrante;
         this.parentesco = parentesco;
