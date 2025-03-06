@@ -1,0 +1,84 @@
+@startuml Mutxamel_FC
+
+' Interfaces
+interface FuncionesIntegrantes {
+  +concentrarse(): void
+  +viajar(ciudad: String): void
+  +celebrarGol(): void
+}
+
+interface AccionesDeportivas {
+  +entrenar(): void
+  +jugarPartido(rival: String): void
+}
+
+' Clase abstracta base
+abstract class MutxamelFC {
+  -nombre: String
+  -edad: int
+  +getNombre(): String
+  +setNombre(nombre: String): void
+  +getEdad(): int
+  +setEdad(edad: int): void
+}
+
+' Clases concretas
+class Jugador {
+  -categoria: Equipos
+  -posicion: Posiciones
+  -dorsal: int
+  -static dorsalesAsignados: Set<Integer>
+  +calentar(): void
+  +descansar(): void
+  +marcarGol(): void
+  +setDorsal(dorsal: int): void
+}
+
+class Entrenador {
+  -equipo: Equipos
+  -formacionPreferida: String
+  +planificarEntrenamiento(): void
+  +hacerCambios(): void
+  +setFormacionPreferida(formacion: String): void
+}
+
+class Masajista {
+  -titulacion: String
+  -añosExperiencia: int
+  +darMasaje(jugador: Jugador): void
+}
+
+class Acompañante {
+  -integrante: Jugador
+  -parentesco: String
+  +animarEquipo(): void
+}
+
+' Enumeraciones
+enum Equipos {
+  BENJAMIN
+  ALEVIN
+  INFANTIL
+  CADETE
+  JUVENIL
+  SENIOR
+}
+
+enum Posiciones {
+  PORTERO
+  DEFENSA
+  CENTROCAMPISTA
+  DELANTERO
+}
+
+' Relaciones
+MutxamelFC ..|> FuncionesIntegrantes
+Jugador --|> MutxamelFC
+Jugador ..|> AccionesDeportivas
+Entrenador --|> MutxamelFC
+Entrenador ..|> AccionesDeportivas
+Masajista --|> MutxamelFC
+Acompañante --|> MutxamelFC
+Acompañante --> Jugador : tiene
+
+@enduml
