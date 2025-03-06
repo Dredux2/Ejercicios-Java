@@ -12,7 +12,7 @@ public class Team extends Participant {
     public Team(String name, ArrayList<Player> players) throws FullTeamException {
         super(name);
         if (players.size() < MIN_PLAYERS || players.size() > MAX_PLAYERS) {
-            throw new FullTeamException("ERROR: El equipo debe tener entre " + MIN_PLAYERS + " y " + MAX_PLAYERS + " jugadores.");
+            throw new FullTeamException("ERROR: The team must have between " + MIN_PLAYERS + " and " + MAX_PLAYERS + " players.");
         }
         this.players = new ArrayList<>(players);
     }
@@ -21,7 +21,7 @@ public class Team extends Participant {
         if (players.size() < MAX_PLAYERS){
             players.add(player);
         } else {
-            throw new FullTeamException("ERROR: Este equipo a alcanzado el numero maximo de jugadores.");
+            throw new FullTeamException("ERROR: This team has reached the maximum number of players.");
         }
     }
 
