@@ -23,7 +23,7 @@ public class Artista extends MutxaAwards implements AccionesAsistentes {
         listaPremios.add(premio);
     }
 
-    public void recogerPremio(Premio premio) {
+    public void recogerPremio(Premio premio) throws noPremiado {
         if (premio.getGanador().equals(this)){
             System.out.println("El artista " + nombre + " esta subiendo a recoger el premio " + premio.getCategoria().name());
         } else {

@@ -1,15 +1,12 @@
 package eSports_Tournament.main;
-import eSports_Tournament.data.Match;
-import eSports_Tournament.data.Player;
-import eSports_Tournament.data.Team;
-import eSports_Tournament.data.Tournaments;
+import eSports_Tournament.data.*;
 import eSports_Tournament.exceptions.FullTeamException;
 import java.util.ArrayList;
 public class Tournament_Manager {
-    ArrayList<Player> players = new ArrayList<Player>();
-    ArrayList<Team> teams = new ArrayList<Team>();
-    ArrayList<Tournaments> tournaments = new ArrayList<Tournaments>();
-    ArrayList<Match> matches = new ArrayList<Match>();
+    ArrayList<Player> players = new ArrayList<>();
+    ArrayList<Team> teams = new ArrayList<>();
+    ArrayList<Tournaments> tournaments = new ArrayList<>();
+    ArrayList<Match> matches = new ArrayList<>();
 
     public void initialize() throws FullTeamException {
         // region Build players
@@ -40,6 +37,8 @@ public class Tournament_Manager {
         players.add(new Player("Daniel", 19, 4));
         players.add(new Player("Cristina", 22, 5));
         players.add(new Player("Alberto", 18, 3));
+        players.add(new Player("Raquel", 21, 6));
+        players.add(new Player("Victor", 20, 5));
         // endregion
 
         // region Build teams
@@ -89,21 +88,58 @@ public class Tournament_Manager {
         team5Players.add(players.get(21));
         team5Players.add(players.get(22));
         team5Players.add(players.get(23));
-        team5Players.add(players.get(24));
         Team team5 = new Team("Epsilon Squad", team5Players);
         teams.add(team5);
+
+        // Team 6
+        ArrayList<Player> team6Players = new ArrayList<>();
+        team6Players.add(players.get(24));
+        team6Players.add(players.get(25));
+        team6Players.add(players.get(26));
+        team6Players.add(players.get(27));
+        Team team6 = new Team("Zeta Squad", team6Players);
+        teams.add(team6);
+        // endregion
+
+        // region Build tournaments
+        Tournament_Individual tournament1 = new Tournament_Individual("soloVS", "Super Smash Bros Ultimate", 33);
+        Tournament_Mixed tournament2 = new Tournament_Mixed("MixVS", "League of Legends", 107, "5v5");
+        Tournament_Team tournament3 = new Tournament_Team("TeamVS", "Helldivers 2", 87, 4);
+        tournaments.add(tournament1);
+        tournaments.add(tournament2);
+        tournaments.add(tournament3);
         // endregion
     }
 
-    public void showPlayers() {
-        for (Player player : players) {
-            System.out.println(player);
+    public void findPlayer(String userName){
+        for (Player jugador : players){
+            if (jugador.getName().matches(userName)){
+                System.out.println("Player found: ");
+                System.out.println(jugador);
+            }
         }
     }
 
-    public void showTeams() {
-        for (Team team : teams) {
-            System.out.println(team);
+    public void findTeam(String teamName){
+        for (Team equipo : teams){
+            if (equipo.getName().matches(teamName)){
+                System.out.println("Team found: ");
+                System.out.println(equipo);
+            }
+        }
+    }
+
+    public void showTournament(){
+        for (Tournaments torneos : tournaments){
+            System.out.println(torneos);
+        }
+    }
+
+    public void showPlayerRanking(){
+        players.sort((player1, player2) -> Double.compare(player2.getRanking(),player1.getRanking()));
+        System.out.println("Players ordered by Ranking: ");
+        for (Player jugador : players){
+            System.out.println(jugador);
         }
     }
 }

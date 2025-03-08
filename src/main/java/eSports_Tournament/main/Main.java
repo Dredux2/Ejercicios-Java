@@ -6,8 +6,13 @@ public class Main {
         Tournament_Manager manager = new Tournament_Manager();
 
         manager.initialize();
-        manager.showPlayers();
-        System.out.println("-----------------");
-        manager.showTeams();
+        manager.findPlayer("Juan");
+        System.out.println("------------------------------");
+        manager.findTeam("Alpha Squad");
+        System.out.println("------------------------------");
+        manager.showTournament();
+        System.out.println("------------------------------");
+        manager.showPlayerRanking();
+        System.out.println("------------------------------");
     }
 }

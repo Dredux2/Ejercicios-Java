@@ -15,6 +15,6 @@ public abstract class Tournaments {
 
     @Override
     public String toString(){
-        return " Tournament Type: " + tournamentName + "(" + game + "), Price: " + price + "€";
+        return " Tournament Type: " + tournamentName + " (" + game + "), Price: " + price + "€";
     }
 }
