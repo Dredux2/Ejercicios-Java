@@ -4,11 +4,11 @@ import lombok.Setter;
 import lombok.ToString;
 import java.util.Objects;
 @Getter @Setter @ToString
-public class Peticion {
+public class Peticion_Colecciones {
     private String id;
     private String nombre;
 
-    public Peticion(String nombre){
+    public Peticion_Colecciones(String nombre){
         if (!id.matches("^PC\\d{4}$")){
             throw new RuntimeException("ERROR: Formato de identificador incorrecto");
         } else {
@@ -28,7 +28,7 @@ public class Peticion {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Peticion peticion = (Peticion) o;
+        Peticion_Colecciones peticion = (Peticion_Colecciones) o;
         return Objects.equals(id, peticion.id);
     }
 

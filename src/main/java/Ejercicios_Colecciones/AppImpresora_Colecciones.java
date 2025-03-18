@@ -1,7 +1,7 @@
 package Ejercicios_Colecciones;
 import java.util.LinkedList;
 import java.util.Queue;
-public class AppImpresora {
+public class AppImpresora_Colecciones {
     public static void main(String[] args) {
         System.out.println("**** Sistema de Impresion Online ****");
         addDocumento("doc.txt");
