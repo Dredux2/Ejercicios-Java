@@ -2,9 +2,9 @@ package Ejercicios_Colecciones;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
-public class AppCine_Colecciones {
+public class AppCine {
     static Random rm = new Random();
-    static Queue<Persona_Colecciones> cola = new LinkedList<>();
+    static Queue<Persona> cola = new LinkedList<>();
     public static void main(String[] args) {
         generarCola();
         System.out.println("La cola tiene " + cola.size() + " personas: " + cola);
@@ -14,7 +14,7 @@ public class AppCine_Colecciones {
     public static void generarCola(){
         int numeroPersonas = rm.nextInt(250);
         for (int i = 0; i < numeroPersonas; i++) {
-            cola.offer(new Persona_Colecciones(rm.nextInt(97)+3));
+            cola.offer(new Persona(rm.nextInt(97)+3));
         }
     }
 
