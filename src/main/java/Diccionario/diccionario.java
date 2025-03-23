@@ -2,9 +2,9 @@ package Diccionario;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Stack;
-public class diccionario {
+public class Diccionario {
     HashMap<String, String> traductor;
-    public diccionario(){
+    public Diccionario(){
         traductor = new HashMap<>();
     }
 
