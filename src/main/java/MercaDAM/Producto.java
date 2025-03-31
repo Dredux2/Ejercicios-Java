@@ -1,7 +1,4 @@
 package MercaDAM;
-import lombok.Getter;
-import lombok.ToString;
-@Getter @ToString
 public enum Producto {
     MANZANAS(2.30),
     PAN(1.00),

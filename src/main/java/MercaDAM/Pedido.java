@@ -1,18 +1,21 @@
 package MercaDAM;
+import java.util.HashMap;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import java.util.HashMap;
 @Getter @Setter @ToString
 public class Pedido {
     private HashMap<Producto, Integer> pedido;
-    private double importe_total;
+    private double importe_Total;
 
-    public void aplicarPromo3x2(){
-
+    public Pedido() {
+        this.pedido = new HashMap<>();
+        this.importe_Total = 0.0;
     }
 
-    public void aplicarPromo10(){
+    public void Promo_3x2() {
+    }
 
+    public void Promo_10() {
     }
 }

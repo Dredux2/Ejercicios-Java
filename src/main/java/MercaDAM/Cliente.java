@@ -4,20 +4,27 @@ import lombok.Setter;
 import lombok.ToString;
 @Getter @Setter @ToString
 public class Cliente {
-    private String usuario;
+    private String nombre;
     private String contraseña;
+    private String direccion;
     private Pedido pedido;
     private boolean promociones;
 
-    public void crearPedido(){
-
+    public Cliente(String nombre, String contraseña, String direccion, Pedido pedido, boolean promociones) {
+        this.nombre = nombre;
+        this.contraseña = contraseña;
+        this.direccion = direccion;
+        this.pedido = pedido;
+        this.promociones = promociones;
     }
 
-    public void insertarProducto(){
-
+    public void crearPedido() {
     }
 
-    public void importePedido(){
+    public void insertarProducto() {
+    }
 
+    public double importePedido() {
+        return 0;
     }
 }
