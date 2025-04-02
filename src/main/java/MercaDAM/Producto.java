@@ -1,4 +1,6 @@
 package MercaDAM;
+import lombok.Getter;
+@Getter
 public enum Producto {
     MANZANAS(2.30),
     PAN(1.00),
@@ -11,7 +13,6 @@ public enum Producto {
     PASTA(0.89);
 
     private final double precio;
-
     Producto(double precio) {
         this.precio = precio;
     }

@@ -10,7 +10,6 @@ public class Pedido {
 
     public Pedido() {
         this.pedido = new HashMap<>();
-        this.importe_Total = 0.0;
     }
 
     public void Promo_3x2() {

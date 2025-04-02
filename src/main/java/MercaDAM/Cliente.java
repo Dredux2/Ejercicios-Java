@@ -21,7 +21,8 @@ public class Cliente {
     public void crearPedido() {
     }
 
-    public void insertarProducto() {
+    public void insertarProducto(String producto) {
+
     }
 
     public double importePedido() {
