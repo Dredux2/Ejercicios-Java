@@ -15,8 +15,6 @@ public class AppZonaClientes {
         if (cliente != null) {
             iniciarCompra();
         }
-        System.out.println(cliente);
-        System.out.println(cliente.importePedido());
     }
 
     public static void autenticacion(List<Cliente> listaClientes) {

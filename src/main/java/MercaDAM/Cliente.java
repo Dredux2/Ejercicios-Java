@@ -3,6 +3,7 @@ import lombok.Getter;
 import lombok.Setter;
 import java.util.HashMap;
 import java.util.Map;
+
 @Getter @Setter
 public class Cliente {
     private String nombre;
@@ -38,15 +39,31 @@ public class Cliente {
                     pedidoMAP.put(productoElegido, cantidadActual + 1);
                     pedido.setPedido(pedidoMAP);
                 }
+                System.out.println(importePedido(productoElegido));
             }
         }
     }
 
-    public double importePedido() {
+    public double importePedido(Producto productoAñadido) {
         double total = 0;
-        for (Map.Entry<Producto, Integer> precioElegido : pedidoMAP.entrySet()){
-            double precios = precioElegido.getKey().getPrecio();
-            total += precios;
+        double precioProducto;
+        for (Map.Entry<Producto, Integer> productoElegido : pedidoMAP.entrySet()){
+            precioProducto = productoElegido.getKey().getPrecio();
+            total += precioProducto;
+        }
+        System.out.print("Has añadido " + productoAñadido + " por " + productoAñadido.getPrecio() + "€. ¿Quieres añadir mas productos a tu carrito de la compra? [S/N] ");
+        String opcion = AppZonaClientes.sc.nextLine().toUpperCase();
+        switch (opcion){
+            case "S":
+                AppZonaClientes.iniciarCompra();
+                break;
+            case "N":
+                System.out.println("RESUMEN DE TU CARRITO:");
+                System.out.println("Productos:");
+                for (Map.Entry<Producto, Integer> productoElegido : pedidoMAP.entrySet()){
+                    System.out.println(productoElegido.getKey() + " " + productoElegido.getKey().getPrecio() + "€");
+                }
+                break;
         }
         return total;
     }
