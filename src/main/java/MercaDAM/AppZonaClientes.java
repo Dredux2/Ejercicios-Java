@@ -10,7 +10,6 @@ public class AppZonaClientes {
     private static Cliente cliente;
     private static MercaDAM mercaDAM = new MercaDAM();
     public static void main(String[] args) {
-        MercaDAM mercaDAM = new MercaDAM();
         autenticacion(MercaDAM.getListaClientes());
         if (cliente != null) {
             iniciarCompra();

@@ -3,7 +3,6 @@ import lombok.Getter;
 import lombok.Setter;
 import java.util.HashMap;
 import java.util.Map;
-
 @Getter @Setter
 public class Cliente {
     private String nombre;
@@ -39,7 +38,7 @@ public class Cliente {
                     pedidoMAP.put(productoElegido, cantidadActual + 1);
                     pedido.setPedido(pedidoMAP);
                 }
-                System.out.println(importePedido(productoElegido));
+                System.out.println("Importe total a pagar: " + importePedido(productoElegido));
             }
         }
     }
@@ -47,23 +46,31 @@ public class Cliente {
     public double importePedido(Producto productoAñadido) {
         double total = 0;
         double precioProducto;
-        for (Map.Entry<Producto, Integer> productoElegido : pedidoMAP.entrySet()){
-            precioProducto = productoElegido.getKey().getPrecio();
+        for (Map.Entry<Producto, Integer> producto : pedidoMAP.entrySet()){
+            precioProducto = producto.getKey().getPrecio();
             total += precioProducto;
         }
         System.out.print("Has añadido " + productoAñadido + " por " + productoAñadido.getPrecio() + "€. ¿Quieres añadir mas productos a tu carrito de la compra? [S/N] ");
         String opcion = AppZonaClientes.sc.nextLine().toUpperCase();
-        switch (opcion){
-            case "S":
-                AppZonaClientes.iniciarCompra();
-                break;
-            case "N":
-                System.out.println("RESUMEN DE TU CARRITO:");
-                System.out.println("Productos:");
-                for (Map.Entry<Producto, Integer> productoElegido : pedidoMAP.entrySet()){
-                    System.out.println(productoElegido.getKey() + " " + productoElegido.getKey().getPrecio() + "€");
-                }
-                break;
+        boolean valido = false;
+        while (!valido){
+            switch (opcion){
+                case "S":
+                    valido = true;
+                    AppZonaClientes.iniciarCompra();
+                    break;
+                case "N":
+                    valido = true;
+                    System.out.println("RESUMEN DE TU CARRITO:");
+                    System.out.println("Productos:");
+                    for (Map.Entry<Producto, Integer> productoElegido : pedidoMAP.entrySet()){
+                        System.out.println(productoElegido.getKey() + " " + productoElegido.getKey().getPrecio() + "€");
+                    }
+                    break;
+                default:
+                    System.out.println("ERROR: Opcion no valida.");
+                    break;
+            }
         }
         return total;
     }
