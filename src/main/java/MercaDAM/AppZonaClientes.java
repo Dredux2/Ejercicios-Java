@@ -15,6 +15,8 @@ public class AppZonaClientes {
         if (cliente != null) {
             iniciarCompra();
         }
+        System.out.println(cliente);
+        System.out.println(cliente.importePedido());
     }
 
     public static void autenticacion(List<Cliente> listaClientes) {
@@ -53,9 +55,8 @@ public class AppZonaClientes {
     }
 
     public static void iniciarCompra(){
-        Pedido pedido = new Pedido();
-        boolean productoValido = false;
         Producto productoElegido = null;
+        boolean productoValido = false;
         while (!productoValido) {
             imprimirProductos();
             System.out.print("Elige un producto: ");
@@ -65,6 +66,7 @@ public class AppZonaClientes {
             } catch (IllegalArgumentException error) {
                 System.out.println("\n¡El producto no existe! Elige uno.");
             }
+            cliente.crearPedido();
             cliente.insertarProducto(String.valueOf(productoElegido));
         }
     }
