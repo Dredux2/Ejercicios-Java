@@ -1,4 +1,4 @@
-package Mutxamel_FC;
+package UD6.Mutxamel_FC;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.HashSet;

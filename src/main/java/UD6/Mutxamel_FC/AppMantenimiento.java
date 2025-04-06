@@ -1,4 +1,4 @@
-package Mutxamel_FC;
+package UD6.Mutxamel_FC;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
