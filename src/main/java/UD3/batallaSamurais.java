@@ -1,4 +1,4 @@
-package UD2;
+package UD3;
 import java.util.Random;
 import java.util.Scanner;
 public class batallaSamurais {
@@ -21,11 +21,10 @@ public class batallaSamurais {
 
                 if (potenciaSamurai == 30){
                     potenciaValida = true;
-                    potenciaSamurai = 0;
                 } else {
                     System.out.println("ERROR: La potencia total no suma 30\n");
-                    potenciaSamurai = 0;
                 }
+                potenciaSamurai = 0;
             }
             System.out.println("Equipo 1 Completado");
             potenciaValida = false;
