@@ -9,15 +9,24 @@ public class Empleado {
     private Cargos cargo;
     private Empleado director;
 
-    public Empleado(String id, String nombre) {
-        this.id = id;
+    public Empleado(String nombre) {
+        generarID();
         this.nombre = nombre;
         this.cargo = Cargos.PTE;
     }
 
-    public Empleado(String id, String nombre, Cargos cargo) {
-        this.id = id;
+    public Empleado(String nombre, Cargos cargo) {
+        generarID();
         this.nombre = nombre;
         this.cargo = cargo;
+        if (cargo.equals(Cargos.DIRECTOR)){
+            this.director = null;
+        }
+    }
+
+    private static int contador = 0;
+    public void generarID() {
+        contador++;
+        this.id = String.format("EP%03d", contador);
     }
 }

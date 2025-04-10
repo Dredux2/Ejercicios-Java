@@ -18,7 +18,7 @@ public class Programa {
         this.listaEmpleados = new ArrayList<>();
         this.listaInvitados = new ArrayList<>();
 
-        Empleado director = new Empleado();
+        Empleado director = new Empleado("Carlos", Cargos.DIRECTOR);
         listaEmpleados.add(director);
     }
 
@@ -29,7 +29,27 @@ public class Programa {
         this.listaEmpleados = new ArrayList<>();
         this.listaInvitados = new ArrayList<>();
 
-        Empleado director = new Empleado();
+        Empleado director = new Empleado("Carlos", Cargos.DIRECTOR);
         listaEmpleados.add(director);
+    }
+
+    public void eliminarCadena() {
+        cadena = null;
+    }
+
+    public void añadirEmpleado(Empleado empleado){
+        listaEmpleados.add(empleado);
+    }
+
+    public void eliminarEmpleado(Empleado empleado){
+        listaEmpleados.remove(empleado);
+    }
+
+    public void añadirInvitado(Invitado invitado){
+        listaInvitados.add(invitado);
+    }
+
+    public void eliminarInvitado(Invitado invitado){
+        listaInvitados.remove(invitado);
     }
 }

@@ -12,4 +12,17 @@ public class Cadena {
         this.nombre = nombre;
         this.listaProgramas = new ArrayList<>();
     }
+
+    public void añadirPrograma(Programa programa){
+        listaProgramas.add(programa);
+    }
+
+    public void eliminarPrograma(String nombre){
+        for (Programa programa : listaProgramas){
+            if (programa.getNombre().equals(nombre)){
+                listaProgramas.remove(programa);
+                programa.eliminarCadena();
+            }
+        }
+    }
 }
