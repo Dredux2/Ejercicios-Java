@@ -17,10 +17,10 @@ public class Invitado {
         this.temporada = temporada;
     }
 
-    public Invitado(String nombre, String profesion, LocalDate fecha_visita, int temporada) {
+    public Invitado(String nombre, String profesion, int temporada, LocalDate fecha_visita) {
         this.nombre = nombre;
         this.profesion = profesion;
-        this.fecha_visita = fecha_visita;
         this.temporada = temporada;
+        this.fecha_visita = fecha_visita;
     }
 }
