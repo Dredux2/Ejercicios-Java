@@ -1,0 +1,72 @@
+@startuml
+
+' Definición del enum Cargos
+enum Cargos {
+  DIRECTOR
+  TÉCNICO
+  PRESENTADOR
+  COLABORADOR
+  PTE
+}
+
+' Definición de la clase Cadena
+class Cadena {
+  -String nombre
+  -ArrayList<Programa> listaProgramas
+  +Cadena(String nombre)
+  +void añadirPrograma(Programa programa)
+  +void eliminarPrograma(Programa programa)
+  +boolean buscarInvitado(String nombre)
+  +void invitadoAntes(String nombre)
+}
+
+' Definición de la clase Programa
+class Programa {
+  -String nombre
+  -Cadena cadena
+  -int temporadas
+  -ArrayList<Empleado> listaEmpleados
+  -ArrayList<Invitado> listaInvitados
+  +Programa(String nombre, Cadena cadena)
+  +Programa(String nombre, Cadena cadena, int temporadas)
+  +void eliminarCadena()
+  +void añadirEmpleado(Empleado empleado)
+  +void eliminarEmpleado(Empleado empleado)
+  +void añadirInvitado(Invitado invitado)
+  +void eliminarInvitado(Invitado invitado)
+  +void invitadosTemporada(int temporada)
+  +int vecesInvitado(String nombre)
+  +void rastrearInvitado(String nombre)
+}
+
+' Definición de la clase Empleado
+class Empleado {
+  -String id
+  -String nombre
+  -Cargos cargo
+  -Empleado director
+  -static int contador
+  +Empleado(String nombre)
+  +Empleado(String nombre, Cargos cargo)
+  +void generarID()
+}
+
+' Definición de la clase Invitado
+class Invitado {
+  -String nombre
+  -String profesion
+  -LocalDate fecha_visita
+  -int temporada
+  +Invitado(String nombre, String profesion, int temporada)
+  +Invitado(String nombre, String profesion, int temporada, LocalDate fecha_visita)
+}
+
+' Relaciones entre las clases
+Cadena "1" o-- "*" Programa: contiene
+Programa "*" -- "0..1" Cadena: pertenece a
+Programa "1" o-- "*" Empleado: contrata
+Programa "1" o-- "*" Invitado: recibe
+Empleado -- Cargos: tiene
+Empleado "subordinado *" --> "director 0..1" Empleado: depende de
+
+@enduml

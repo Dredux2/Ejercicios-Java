@@ -2,12 +2,10 @@ package UD5;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 @Getter @Setter @ToString
 public class Programa {
-    // Incomplete code
     private String nombre;
     private Cadena cadena;
     private int temporadas;
@@ -41,6 +39,15 @@ public class Programa {
     }
 
     public void añadirEmpleado(Empleado empleado){
+        if (empleado.getCargo().equals(Cargos.DIRECTOR)) {
+            empleado.setDirector(null);
+        } else {
+            for (Empleado director : listaEmpleados){
+                if (director.getCargo().equals(Cargos.DIRECTOR)){
+                    empleado.setDirector(director);
+                }
+            }
+        }
         listaEmpleados.add(empleado);
     }
 
@@ -79,38 +86,13 @@ public class Programa {
 
     public void rastrearInvitado(String nombre) {
         int contador = vecesInvitado(nombre);
-        System.out.println("\n" + nombre + " ha sido invitado " + contador + " veces al programa: ");
+        System.out.println("\n" + nombre + " ha sido invitado " + contador + " veces a este programa: ");
         for (Invitado invitado : listaInvitados) {
             if (invitado.getNombre().equals(nombre)) {
                 LocalDate fecha = invitado.getFecha_visita();
                 int temporada = invitado.getTemporada();
                 System.out.println("Fecha de visita: " + fecha);
                 System.out.println("Temporada: " + temporada + "\n");
-            }
-        }
-    }
-
-    public boolean buscarInvitado(String nombre) {
-        for (Programa programa : cadena.getListaProgramas()){
-            for (Invitado invitado : listaInvitados) {
-                if (invitado.getNombre().equals(nombre)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public void invitadoAntes(String nombre){
-        boolean encontrado = buscarInvitado(nombre);
-        LocalDate fecha1, fecha2;
-        if (encontrado){
-            for (Programa programa : cadena.getListaProgramas()){
-                for (Invitado invitado : listaInvitados) {
-                    if (invitado.getNombre().equals(nombre)) {
-                        fecha1 = invitado.getFecha_visita();
-                    }
-                }
             }
         }
     }

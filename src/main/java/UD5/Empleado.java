@@ -19,9 +19,6 @@ public class Empleado {
         generarID();
         this.nombre = nombre;
         this.cargo = cargo;
-        if (cargo.equals(Cargos.DIRECTOR)){
-            this.director = null;
-        }
     }
 
     private static int contador = 0;
