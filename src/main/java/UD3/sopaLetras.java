@@ -54,7 +54,13 @@ public class sopaLetras {
                             fila += matriz[i][j].toLowerCase();
                             if (fila.contains(buscar)) {
                                 encontrada = true;
-                                System.out.println("Encontrada!!! En la posicion " + i + " " + ((buscar.length() - j) + 1));
+                                int posicionJ;
+                                if (buscar.length() < j){
+                                    posicionJ = (j - buscar.length()) + 1;
+                                } else {
+                                    posicionJ = (buscar.length() - j) + 1;
+                                }
+                                System.out.println("Encontrada!!! En la posicion " + i + " " + posicionJ);
                                 break;
                             }
                         }
@@ -72,7 +78,13 @@ public class sopaLetras {
                                 columna += matriz[i][j].toLowerCase();
                                 if (columna.contains(buscar)) {
                                     encontrada = true;
-                                    System.out.println("Encontrada!!! En la posicion " + ((buscar.length() - i) + 1) + " " + j);
+                                    int posicionI;
+                                    if (buscar.length() < i){
+                                        posicionI = (i - buscar.length()) + 1;
+                                    } else {
+                                        posicionI = (buscar.length() - i) + 1;
+                                    }
+                                    System.out.println("Encontrada!!! En la posicion " + posicionI + " " + j);
                                     break;
                                 }
                             }

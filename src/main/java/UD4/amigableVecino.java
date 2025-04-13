@@ -1,5 +1,5 @@
 package UD4;
-public class Doner_sospechoso {
+public class amigableVecino {
     static java.util.Scanner in;
     public static void casoDePrueba() {
         String numeros = in.nextLine();
