@@ -1,0 +1,38 @@
+@startuml
+abstract class MetodoPago {
+  {abstract} void procesarPago(double importe)
+}
+
+class Bizum {
+  - Random rm
+  - String teléfono
+  - int pin
+  + boolean validarBizum()
+  + void procesarPago(double importe)
+}
+
+class PayPal {
+  - String cuenta
+  - double saldo
+  + boolean validarPayPal(double importe)
+  + void procesarPago(double importe)
+}
+
+class TarjetaCredito {
+  - String nro_tarjeta
+  - String tipo
+  + boolean validarTarjeta()
+  + void procesarPago(double importe)
+}
+
+class Tienda {
+  + void iniciarPago()
+  + void realizarPago(MetodoPago metodo, double importe)
+}
+
+MetodoPago <|-- Bizum
+MetodoPago <|-- PayPal
+MetodoPago <|-- TarjetaCredito
+
+Tienda --> MetodoPago : usa
+@enduml

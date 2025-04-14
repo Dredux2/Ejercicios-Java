@@ -35,6 +35,6 @@ public class amigableVecino {
         in.nextLine();
         for (int i = 0; i < numCasos; i++) {
             casoDePrueba();
-        } // main
+        } // AppEcommerce
     }
 }
