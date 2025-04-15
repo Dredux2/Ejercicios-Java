@@ -50,12 +50,13 @@ public class AppZonaClientes {
     }
 
     public void iniciarCompra(){
+        cliente.crearPedido();
         Scanner sc = new Scanner(System.in);
         System.out.println("Añade productos a tu lista de la compra...");
         imprimirProductos();
         System.out.println("==========================================");
         System.out.print("Elige un producto: ");
-        String producto = sc.nextLine();
+        String producto = sc.nextLine().toUpperCase();
         cliente.insertarProducto(producto);
     }
 

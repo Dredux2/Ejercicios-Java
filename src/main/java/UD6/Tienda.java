@@ -1,4 +1,4 @@
-package UD6.Ecommerce;
+package UD6;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Tienda {

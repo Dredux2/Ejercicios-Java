@@ -8,8 +8,8 @@ public class Pedido {
     private HashMap<Producto, Integer> pedido;
     private double importe_Total;
 
-    public Pedido(HashMap<Producto, Integer> pedido) {
-        this.pedido = pedido;
+    public Pedido() {
+        pedido = new HashMap<>();
         this.importe_Total = 0;
     }
 

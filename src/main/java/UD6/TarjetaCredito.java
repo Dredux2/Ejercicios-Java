@@ -1,4 +1,4 @@
-package UD6.Ecommerce;
+package UD6;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
